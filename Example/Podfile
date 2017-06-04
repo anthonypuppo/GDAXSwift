@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'GDAXSwift_Example' do
+  pod 'GDAXSwift', :path => '../'
+
+  target 'GDAXSwift_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
