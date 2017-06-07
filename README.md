@@ -1,6 +1,6 @@
 # GDAXSwift
 
-[![CI Status](http://img.shields.io/travis/Anthony Puppo/GDAXSwift.svg?style=flat)](https://travis-ci.org/Anthony Puppo/GDAXSwift)
+[![CI Status](http://img.shields.io/travis/AnthonyOSX/GDAXSwift.svg?style=flat)](https://travis-ci.org/AnthonyOSX/GDAXSwift)
 [![Version](https://img.shields.io/cocoapods/v/GDAXSwift.svg?style=flat)](http://cocoapods.org/pods/GDAXSwift)
 [![License](https://img.shields.io/cocoapods/l/GDAXSwift.svg?style=flat)](http://cocoapods.org/pods/GDAXSwift)
 [![Platform](https://img.shields.io/cocoapods/p/GDAXSwift.svg?style=flat)](http://cocoapods.org/pods/GDAXSwift)
@@ -22,7 +22,7 @@ pod "GDAXSwift"
 
 ## Author
 
-Anthony Puppo, anthony@puppozone.com
+Anthony Puppo, anthonypuppo123@gmail.com
 
 ## License
 

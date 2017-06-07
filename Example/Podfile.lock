@@ -1,0 +1,20 @@
+PODS:
+  - CryptoSwift (0.6.9)
+  - GDAXSwift (0.1.0):
+    - CryptoSwift
+
+DEPENDENCIES:
+  - CryptoSwift
+  - GDAXSwift (from `../`)
+
+EXTERNAL SOURCES:
+  GDAXSwift:
+    :path: ../
+
+SPEC CHECKSUMS:
+  CryptoSwift: a22f6ba238e9ce4d26ee7bf45b9ed82e7122d4a0
+  GDAXSwift: 44959f3493714ef9282a1003bc725ad83da67ab9
+
+PODFILE CHECKSUM: df6d1acc0fb3c6311d593fffe9392acda2ad77d6
+
+COCOAPODS: 1.2.1

@@ -2,6 +2,7 @@ use_frameworks!
 
 target 'GDAXSwift_Example' do
   pod 'GDAXSwift', :path => '../'
+  pod 'CryptoSwift'
 
   target 'GDAXSwift_Tests' do
     inherit! :search_paths

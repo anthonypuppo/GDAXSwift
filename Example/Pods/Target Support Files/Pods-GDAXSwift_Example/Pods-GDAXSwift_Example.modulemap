@@ -1,0 +1,6 @@
+framework module Pods_GDAXSwift_Example {
+  umbrella header "Pods-GDAXSwift_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

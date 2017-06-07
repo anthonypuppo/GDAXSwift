@@ -7,18 +7,22 @@
 //
 
 import UIKit
+import GDAXSwift
 
 class ViewController: UIViewController {
 
+	private var gdaxClient: GDAXClient!
+	
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        gdaxClient = GDAXClient(apiKey: nil, secret64: nil, passphrase: nil, isSandbox: false)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+	
+	@IBAction func btnRunTests_Tap(_ sender: Any) {
+		gdaxClient.public.getProductHistoricRates(productID: "BTC-USD", completionHandler: { (rates, response, error) in
+			print(rates)
+			print(error)
+		})
+	}
 
 }
-
