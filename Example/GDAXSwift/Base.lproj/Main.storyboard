@@ -21,18 +21,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eX9-UP-2bu">
-                                <rect key="frame" x="153.5" y="61" width="68" height="30"/>
-                                <state key="normal" title="Run Tests"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tet-Kb-AY0">
+                                <rect key="frame" x="134" y="63" width="106" height="30"/>
+                                <state key="normal" title="Run Public Test"/>
                                 <connections>
-                                    <action selector="btnRunTests_Tap:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="mdD-bI-FUR"/>
+                                    <action selector="btnPublicTest_Tap:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="VcP-36-8Ci"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MXb-5c-9yR">
+                                <rect key="frame" x="131" y="115" width="112" height="30"/>
+                                <state key="normal" title="Run Private Test"/>
+                                <connections>
+                                    <action selector="btnPrivateTest_Tap:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="vGo-xt-yJe"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="eX9-UP-2bu" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="41" id="ThA-rg-hpU"/>
-                            <constraint firstItem="eX9-UP-2bu" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="glB-P2-n2f"/>
+                            <constraint firstItem="MXb-5c-9yR" firstAttribute="centerX" secondItem="Tet-Kb-AY0" secondAttribute="centerX" id="6f4-Fd-oRl"/>
+                            <constraint firstItem="MXb-5c-9yR" firstAttribute="top" secondItem="Tet-Kb-AY0" secondAttribute="bottom" constant="22" id="NAD-3s-4Hz"/>
+                            <constraint firstItem="Tet-Kb-AY0" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="43" id="U8Z-rd-YJ6"/>
+                            <constraint firstItem="Tet-Kb-AY0" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="Yy4-2W-qa1"/>
                         </constraints>
                     </view>
                 </viewController>

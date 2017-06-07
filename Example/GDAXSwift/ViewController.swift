@@ -15,14 +15,21 @@ class ViewController: UIViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-        gdaxClient = GDAXClient(apiKey: nil, secret64: nil, passphrase: nil, isSandbox: false)
+        gdaxClient = GDAXClient(apiKey: nil, secret64: nil, passphrase: nil, isSandbox: true)
     }
 	
-	@IBAction func btnRunTests_Tap(_ sender: Any) {
-		gdaxClient.public.getProductHistoricRates(productID: "BTC-USD", completionHandler: { (rates, response, error) in
-			print(rates)
-			print(error)
+	@IBAction func btnPublicTest_Tap(_ sender: Any) {
+		gdaxClient.public.getProducts({ (products, response, error) in
+			print("Response: \(products as Any)")
+			print("Error: \(error as Any)")
 		})
 	}
-
+	
+	@IBAction func btnPrivateTest_Tap(_ sender: Any) {
+		gdaxClient.private.getAccounts({ (accounts, response, error) in
+			print("Response: \(accounts as Any)")
+			print("Error: \(error as Any)")
+		})
+	}
+	
 }
