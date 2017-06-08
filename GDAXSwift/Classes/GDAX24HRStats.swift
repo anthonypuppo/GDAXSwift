@@ -8,10 +8,10 @@
 
 public struct GDAX24HRStats: JSONInitializable {
 	
-	let open: Double
-	let high: Double
-	let low: Double
-	let volume: Double
+	public let open: Double
+	public let high: Double
+	public let low: Double
+	public let volume: Double
 	
 	internal init(json: Any) throws {
 		var jsonData: Data?

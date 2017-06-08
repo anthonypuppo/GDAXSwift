@@ -8,9 +8,9 @@
 
 public struct GDAXBid {
 	
-	let price: Double
-	let size: Double
-	let numOrders: Int?
-	let orderID: String?
+	public let price: Double
+	public let size: Double
+	public let numOrders: Int?
+	public let orderID: String?
 	
 }

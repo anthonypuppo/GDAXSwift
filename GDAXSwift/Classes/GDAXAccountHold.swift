@@ -8,19 +8,13 @@
 
 public struct GDAXAccountHold: JSONInitializable {
 	
-	let id: String
-	let accountID: String
-	let createdAt: Date
-	let updatedAt: Date
-	let amount: Double
-	let type: Type
-	let ref: String
-	
-	public enum `Type`: String {
-		
-		case order, transfer
-		
-	}
+	public let id: String
+	public let accountID: String
+	public let createdAt: Date
+	public let updatedAt: Date
+	public let amount: Double
+	public let type: GDAXAccountHoldType
+	public let ref: String
 	
 	internal init(json: Any) throws {
 		var jsonData: Data?
@@ -55,7 +49,7 @@ public struct GDAXAccountHold: JSONInitializable {
 			throw GDAXError.responseParsingFailure("amount")
 		}
 		
-		guard let type = Type(rawValue: json["type"] as? String ?? "") else {
+		guard let type = GDAXAccountHoldType(rawValue: json["type"] as? String ?? "") else {
 			throw GDAXError.responseParsingFailure("type")
 		}
 		

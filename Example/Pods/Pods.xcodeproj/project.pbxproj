@@ -75,6 +75,16 @@
 		929721341EE7A96300E616E9 /* GDAXAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929721321EE7A94900E616E9 /* GDAXAccount.swift */; };
 		929721361EE7AF2400E616E9 /* GDAXAccountHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929721351EE7AF2400E616E9 /* GDAXAccountHistory.swift */; };
 		929721381EE7B14200E616E9 /* GDAXAccountHold.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929721371EE7B14200E616E9 /* GDAXAccountHold.swift */; };
+		9297213A1EE8508A00E616E9 /* GDAXOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929721391EE8508A00E616E9 /* GDAXOrder.swift */; };
+		9297213C1EE86B9C00E616E9 /* GDAXSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9297213B1EE86B9C00E616E9 /* GDAXSide.swift */; };
+		9297213E1EE86E6E00E616E9 /* GDAXAccountHistoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9297213D1EE86E6E00E616E9 /* GDAXAccountHistoryType.swift */; };
+		929721401EE86F2100E616E9 /* GDAXAccountHoldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9297213F1EE86F2100E616E9 /* GDAXAccountHoldType.swift */; };
+		929721421EE8716F00E616E9 /* GDAXOrderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929721411EE8716F00E616E9 /* GDAXOrderType.swift */; };
+		929721441EE871E400E616E9 /* GDAXOrderStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929721431EE871E400E616E9 /* GDAXOrderStatus.swift */; };
+		929721461EE8724800E616E9 /* GDAXLiquidity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929721451EE8724800E616E9 /* GDAXLiquidity.swift */; };
+		929721481EE872D900E616E9 /* GDAXFill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929721471EE872D900E616E9 /* GDAXFill.swift */; };
+		9297214A1EE873C100E616E9 /* GDAXSelfTradePrevention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929721491EE873C100E616E9 /* GDAXSelfTradePrevention.swift */; };
+		9297214C1EE876E500E616E9 /* GDAXAccountHistoryDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9297214B1EE876E500E616E9 /* GDAXAccountHistoryDetails.swift */; };
 		94B2942C0620376DDD122A87958F0177 /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB7FA4C9A0C1D774D8F264967ED18BC /* Collection+Extension.swift */; };
 		97037D81117716133BC200BFB624FB0B /* GDAXSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1215643355C7F9F54A656F5DF58345 /* GDAXSwift-dummy.m */; };
 		9788CC579A4E3F5640699C2E6D106116 /* BatchedCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2BB87FA841254116F38ACD32B64924 /* BatchedCollection.swift */; };
@@ -216,6 +226,16 @@
 		929721321EE7A94900E616E9 /* GDAXAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDAXAccount.swift; sourceTree = "<group>"; };
 		929721351EE7AF2400E616E9 /* GDAXAccountHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDAXAccountHistory.swift; sourceTree = "<group>"; };
 		929721371EE7B14200E616E9 /* GDAXAccountHold.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDAXAccountHold.swift; sourceTree = "<group>"; };
+		929721391EE8508A00E616E9 /* GDAXOrder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDAXOrder.swift; sourceTree = "<group>"; };
+		9297213B1EE86B9C00E616E9 /* GDAXSide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDAXSide.swift; sourceTree = "<group>"; };
+		9297213D1EE86E6E00E616E9 /* GDAXAccountHistoryType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDAXAccountHistoryType.swift; sourceTree = "<group>"; };
+		9297213F1EE86F2100E616E9 /* GDAXAccountHoldType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDAXAccountHoldType.swift; sourceTree = "<group>"; };
+		929721411EE8716F00E616E9 /* GDAXOrderType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDAXOrderType.swift; sourceTree = "<group>"; };
+		929721431EE871E400E616E9 /* GDAXOrderStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDAXOrderStatus.swift; sourceTree = "<group>"; };
+		929721451EE8724800E616E9 /* GDAXLiquidity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDAXLiquidity.swift; sourceTree = "<group>"; };
+		929721471EE872D900E616E9 /* GDAXFill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDAXFill.swift; sourceTree = "<group>"; };
+		929721491EE873C100E616E9 /* GDAXSelfTradePrevention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDAXSelfTradePrevention.swift; sourceTree = "<group>"; };
+		9297214B1EE876E500E616E9 /* GDAXAccountHistoryDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDAXAccountHistoryDetails.swift; sourceTree = "<group>"; };
 		936B0E29266FF072DDC943FC2B198ADF /* GDAXPagination.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GDAXPagination.swift; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		950144C7708C0685775D1C9E7658242C /* CryptoSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CryptoSwift-dummy.m"; sourceTree = "<group>"; };
@@ -525,16 +545,26 @@
 				929721201EE5C47500E616E9 /* GDAX24HRStats.swift */,
 				929721321EE7A94900E616E9 /* GDAXAccount.swift */,
 				929721351EE7AF2400E616E9 /* GDAXAccountHistory.swift */,
+				9297214B1EE876E500E616E9 /* GDAXAccountHistoryDetails.swift */,
+				9297213D1EE86E6E00E616E9 /* GDAXAccountHistoryType.swift */,
 				929721371EE7B14200E616E9 /* GDAXAccountHold.swift */,
+				9297213F1EE86F2100E616E9 /* GDAXAccountHoldType.swift */,
 				929721281EE643C300E616E9 /* GDAXAsk.swift */,
 				929721261EE642CC00E616E9 /* GDAXBid.swift */,
 				9297211C1EE5BCD800E616E9 /* GDAXCurrency.swift */,
+				929721471EE872D900E616E9 /* GDAXFill.swift */,
 				929721301EE72B8100E616E9 /* GDAXHistoricRate.swift */,
+				929721451EE8724800E616E9 /* GDAXLiquidity.swift */,
+				929721391EE8508A00E616E9 /* GDAXOrder.swift */,
+				929721431EE871E400E616E9 /* GDAXOrderStatus.swift */,
+				929721411EE8716F00E616E9 /* GDAXOrderType.swift */,
 				936B0E29266FF072DDC943FC2B198ADF /* GDAXPagination.swift */,
 				9297211E1EE5BD8400E616E9 /* GDAXProduct.swift */,
 				929721241EE63F1400E616E9 /* GDAXProductOrderBook.swift */,
 				9297212C1EE672E300E616E9 /* GDAXProductTicker.swift */,
 				9297212E1EE7125200E616E9 /* GDAXProductTrade.swift */,
+				929721491EE873C100E616E9 /* GDAXSelfTradePrevention.swift */,
+				9297213B1EE86B9C00E616E9 /* GDAXSide.swift */,
 				9297210E1EE4D65500E616E9 /* GDAXTime.swift */,
 			);
 			name = Models;
@@ -821,34 +851,44 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				929721421EE8716F00E616E9 /* GDAXOrderType.swift in Sources */,
+				929721441EE871E400E616E9 /* GDAXOrderStatus.swift in Sources */,
 				9297210C1EE4D53E00E616E9 /* GDAXPrivateClient.swift in Sources */,
 				929721141EE4DC7700E616E9 /* DataExtensions.swift in Sources */,
 				9297211F1EE5BD8400E616E9 /* GDAXProduct.swift in Sources */,
 				D60FE3E31FEA2DEDB69DA2BAECC1FAA8 /* DateExtensions.swift in Sources */,
 				2EEE0C391B57E4863F6889C57D4E41B9 /* FormatterExtensions.swift in Sources */,
 				929721381EE7B14200E616E9 /* GDAXAccountHold.swift in Sources */,
+				9297214A1EE873C100E616E9 /* GDAXSelfTradePrevention.swift in Sources */,
+				929721481EE872D900E616E9 /* GDAXFill.swift in Sources */,
 				929721231EE5E97900E616E9 /* JSONInitializable.swift in Sources */,
 				929721181EE4DF9000E616E9 /* GDAXResponseMiddleware.swift in Sources */,
 				929721251EE63F1400E616E9 /* GDAXProductOrderBook.swift in Sources */,
 				929721361EE7AF2400E616E9 /* GDAXAccountHistory.swift in Sources */,
+				9297213A1EE8508A00E616E9 /* GDAXOrder.swift in Sources */,
 				929721101EE4D72000E616E9 /* GDAXTime.swift in Sources */,
+				9297213E1EE86E6E00E616E9 /* GDAXAccountHistoryType.swift in Sources */,
+				9297214C1EE876E500E616E9 /* GDAXAccountHistoryDetails.swift in Sources */,
 				E584632ADE49556260173BA3A6DBACAB /* GDAXClient.swift in Sources */,
 				76E94C0905B9A95B7DBFC7FEEE03AB6D /* GDAXPagination.swift in Sources */,
 				9297212D1EE672E300E616E9 /* GDAXProductTicker.swift in Sources */,
 				929721161EE4DF8500E616E9 /* GDAXRequestMiddleware.swift in Sources */,
 				173F8B8E226B9F008D69835FE2787E2C /* GDAXPublicClient.swift in Sources */,
+				9297213C1EE86B9C00E616E9 /* GDAXSide.swift in Sources */,
 				9297210B1EE4D53900E616E9 /* GDAXError.swift in Sources */,
 				53330B7862ADE8F096B0D8DFC09F6C2F /* GDAXRequestAuthenticator.swift in Sources */,
 				929721121EE4D72E00E616E9 /* StringExtensions.swift in Sources */,
 				929721341EE7A96300E616E9 /* GDAXAccount.swift in Sources */,
 				9297212F1EE7125200E616E9 /* GDAXProductTrade.swift in Sources */,
 				97037D81117716133BC200BFB624FB0B /* GDAXSwift-dummy.m in Sources */,
+				929721401EE86F2100E616E9 /* GDAXAccountHoldType.swift in Sources */,
 				D12793E02E4BA711A680ED6B50CBE9F3 /* HTTPClient.swift in Sources */,
 				929721211EE5C47500E616E9 /* GDAX24HRStats.swift in Sources */,
 				929721291EE643C300E616E9 /* GDAXAsk.swift in Sources */,
 				929721271EE642CC00E616E9 /* GDAXBid.swift in Sources */,
 				9297211D1EE5BCD800E616E9 /* GDAXCurrency.swift in Sources */,
 				260838207A397BEF59A3D3E10473B85B /* HTTPMethod.swift in Sources */,
+				929721461EE8724800E616E9 /* GDAXLiquidity.swift in Sources */,
 				2040E0C36A75E11A3766E224B0199362 /* RequestMiddleware.swift in Sources */,
 				929721311EE72B8100E616E9 /* GDAXHistoricRate.swift in Sources */,
 				3566F7AF42F03AF8334DE13A161154A7 /* ResponseMiddleware.swift in Sources */,

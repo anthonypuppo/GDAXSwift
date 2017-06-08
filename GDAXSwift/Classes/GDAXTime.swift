@@ -8,8 +8,8 @@
 
 public struct GDAXTime: JSONInitializable {
 	
-	let iso: Date
-	let epoch: Double
+	public let iso: Date
+	public let epoch: Double
 
 	internal init(json: Any) throws {
 		var jsonData: Data?

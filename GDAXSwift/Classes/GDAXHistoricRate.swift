@@ -8,11 +8,11 @@
 
 public struct GDAXHistoricRate {
 	
-	let time: Int
-	let low: Double
-	let high: Double
-	let open: Double
-	let close: Double
-	let volume: Double
+	public let time: Int
+	public let low: Double
+	public let high: Double
+	public let open: Double
+	public let close: Double
+	public let volume: Double
 	
 }

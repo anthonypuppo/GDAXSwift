@@ -8,9 +8,9 @@
 
 public struct GDAXCurrency: JSONInitializable {
 	
-	let id: String
-	let name: String
-	let minSize: Double
+	public let id: String
+	public let name: String
+	public let minSize: Double
 	
 	internal init(json: Any) throws {
 		var jsonData: Data?

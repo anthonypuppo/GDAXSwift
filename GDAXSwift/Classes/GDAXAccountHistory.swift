@@ -8,17 +8,12 @@
 
 public struct GDAXAccountHistory: JSONInitializable {
 	
-	let id: String
-	let createdAt: Date
-	let amount: Double
-	let balance: Double
-	let type: Type
-	
-	public enum `Type`: String {
-		
-		case transfer, match, fee, rebate
-		
-	}
+	public let id: String
+	public let createdAt: Date
+	public let amount: Double
+	public let balance: Double
+	public let type: GDAXAccountHistoryType
+	public let details: GDAXAccountHistoryDetails?
 	
 	internal init(json: Any) throws {
 		var jsonData: Data?
@@ -49,7 +44,7 @@ public struct GDAXAccountHistory: JSONInitializable {
 			throw GDAXError.responseParsingFailure("balance")
 		}
 		
-		guard let type = Type(rawValue: json["type"] as? String ?? "") else {
+		guard let type = GDAXAccountHistoryType(rawValue: json["type"] as? String ?? "") else {
 			throw GDAXError.responseParsingFailure("type")
 		}
 		
@@ -59,7 +54,14 @@ public struct GDAXAccountHistory: JSONInitializable {
 		self.balance = balance
 		self.type = type
 		
-		// TODO details field (if available)
+		switch type {
+		case .match, .fee: // result of a trade
+			details = try GDAXAccountHistoryDetails(json: json["details"] as Any)
+			
+			break
+		default:
+			details = nil
+		}
 	}
 	
 }

@@ -8,17 +8,11 @@
 
 public struct GDAXProductTrade: JSONInitializable {
 	
-	let time: Date
-	let tradeID: Int
-	let price: Double
-	let size: Double
-	let side: Side
-	
-	public enum Side: String {
-		
-		case buy, sell
-		
-	}
+	public let time: Date
+	public let tradeID: Int
+	public let price: Double
+	public let size: Double
+	public let side: GDAXSide
 	
 	internal init(json: Any) throws {
 		var jsonData: Data?
@@ -49,7 +43,7 @@ public struct GDAXProductTrade: JSONInitializable {
 			throw GDAXError.responseParsingFailure("size")
 		}
 		
-		guard let side = Side(rawValue: json["side"] as? String ?? "") else {
+		guard let side = GDAXSide(rawValue: json["side"] as? String ?? "") else {
 			throw GDAXError.responseParsingFailure("side")
 		}
 		

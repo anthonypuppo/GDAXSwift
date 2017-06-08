@@ -8,12 +8,12 @@
 
 public struct GDAXAccount: JSONInitializable {
 	
-	let id: String
-	let currency: String
-	let balance: Double
-	let available: Double
-	let hold: Double
-	let profileID: String
+	public let id: String
+	public let currency: String
+	public let balance: Double
+	public let available: Double
+	public let hold: Double
+	public let profileID: String
 	
 	internal init(json: Any) throws {
 		var jsonData: Data?

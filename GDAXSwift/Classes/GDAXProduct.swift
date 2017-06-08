@@ -8,12 +8,12 @@
 
 public struct GDAXProduct: JSONInitializable {
 	
-	let id: String
-	let baseCurrency: String
-	let quoteCurrency: String
-	let baseMinSize: Double
-	let baseMaxSize: Double
-	let quoteIncrement: Double
+	public let id: String
+	public let baseCurrency: String
+	public let quoteCurrency: String
+	public let baseMinSize: Double
+	public let baseMaxSize: Double
+	public let quoteIncrement: Double
 	
 	internal init(json: Any) throws {
 		var jsonData: Data?

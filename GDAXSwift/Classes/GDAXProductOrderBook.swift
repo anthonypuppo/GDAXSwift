@@ -8,9 +8,9 @@
 
 public struct GDAXProductOrderBook: JSONInitializable {
 	
-	let sequence: Int
-	let bids: [GDAXBid]
-	let asks: [GDAXAsk]
+	public let sequence: Int
+	public let bids: [GDAXBid]
+	public let asks: [GDAXAsk]
 	
 	internal init(json: Any) throws {
 		var jsonData: Data?

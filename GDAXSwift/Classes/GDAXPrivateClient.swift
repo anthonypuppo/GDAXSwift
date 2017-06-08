@@ -14,6 +14,7 @@ public class GDAXPrivateClient {
 	
 	private static let accountsRootURLString = "/accounts"
 	private static let ordersRootURLString = "/orders"
+	private static let fillsRootURLString = "/fills"
 	
 	internal init(gdaxClient: GDAXClient) {
 		self.gdaxClient = gdaxClient
@@ -64,6 +65,118 @@ public class GDAXPrivateClient {
 			}
 			
 			completionHandler(history, GDAXPagination(response: response!), response, nil)
+		})
+	}
+	
+	public func placeOrder() {
+		// TODO
+	}
+	
+	public func cancelOrder(orderID: String, completionHandler: @escaping (String?, HTTPURLResponse?, Error?) -> Void) {
+		httpClient.request(urlString: "\(GDAXPrivateClient.ordersRootURLString)/\(orderID)", method: .delete, completionHandler: { (data, response, error) in
+			guard error == nil else {
+				completionHandler(nil, nil, error)
+				
+				return
+			}
+			
+			do {
+				guard let id = (try JSONSerialization.jsonObject(with: data!, options: []) as? [String])?.first else {
+					completionHandler(nil, nil, GDAXError.responseParsingFailure("id"))
+					
+					return
+				}
+				
+				completionHandler(id, response, nil)
+			} catch {
+				completionHandler(nil, nil, error)
+			}
+		})
+	}
+	
+	public func cancelAllOrders(productID: String? = nil, completionHandler: @escaping ([String]?, HTTPURLResponse?, Error?) -> Void) {
+		var query = [URLQueryItem]()
+		
+		if let productID = productID {
+			query.append(URLQueryItem(name: "product_id", value: productID))
+		}
+		
+		httpClient.request(urlString: GDAXPrivateClient.ordersRootURLString, method: .delete, query: query, completionHandler: { (data, response, error) in
+			guard error == nil else {
+				completionHandler(nil, nil, error)
+				
+				return
+			}
+			
+			do {
+				var ids = [String]()
+				
+				for id in try JSONSerialization.jsonObject(with: data!, options: []) as? [String] ?? [String]() {
+					ids.append(id)
+				}
+				
+				completionHandler(ids, response, error)
+			} catch {
+				completionHandler(nil, nil, error)
+			}
+		})
+	}
+	
+	public func getOrders(productID: String? = nil, statuses: [GDAXOrderStatus]? = nil, pagination: GDAXPagination? = nil, completionHandler: @escaping ([GDAXOrder]?, GDAXPagination?, HTTPURLResponse?, Error?) -> Void) {
+		var query = [URLQueryItem]()
+		
+		if let productID = productID {
+			query.append(URLQueryItem(name: "product_id", value: productID))
+		}
+		
+		if let statuses = statuses {
+			for status in statuses {
+				query.append(URLQueryItem(name: "status", value: status.rawValue))
+			}
+		}
+		
+		if let pagination = pagination {
+			query.append(contentsOf: pagination.urlQueryItems)
+		}
+		
+		httpClient.requestJSON(urlString: GDAXPrivateClient.ordersRootURLString, method: .get, query: query, completionHandler: { (orders: [GDAXOrder]?, response: HTTPURLResponse?, error: Error?) in
+			guard error == nil else {
+				completionHandler(nil, nil, nil, error)
+				
+				return
+			}
+			
+			completionHandler(orders, GDAXPagination(response: response!), response, nil)
+		})
+	}
+	
+	public func getOrder(orderID: String, completionHandler: @escaping (GDAXOrder?, HTTPURLResponse?, Error?) -> Void) {
+		httpClient.requestJSON(urlString: "\(GDAXPrivateClient.ordersRootURLString)/\(orderID)", method: .get, completionHandler: completionHandler)
+	}
+	
+	public func getFills(orderID: String? = nil, productID: String? = nil, pagination: GDAXPagination? = nil, completionHandler: @escaping ([GDAXFill]?, GDAXPagination?, HTTPURLResponse?, Error?) -> Void) {
+		var query = [URLQueryItem]()
+		
+		if let orderID = orderID {
+			query.append(URLQueryItem(name: "order_id", value: orderID))
+		}
+		
+		if let productID = productID {
+			query.append(URLQueryItem(name: "product_id", value: productID))
+		}
+		
+		if let pagination = pagination {
+			query.append(contentsOf: pagination.urlQueryItems)
+		}
+		
+		httpClient.requestJSON(urlString: GDAXPrivateClient.fillsRootURLString, method: .get, query: query, completionHandler: { (fills: [GDAXFill]?, response: HTTPURLResponse?, error: Error?) in
+			guard error == nil else {
+				completionHandler(nil, nil, nil, error)
+				
+				return
+			}
+			
+			completionHandler(fills, GDAXPagination(response: response!), response, nil)
 		})
 	}
 	

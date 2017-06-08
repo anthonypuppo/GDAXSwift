@@ -8,13 +8,13 @@
 
 public struct GDAXProductTicker: JSONInitializable {
 	
-	let tradeID: Int
-	let price: Double
-	let size: Double
-	let bid: Double
-	let ask: Double
-	let volume: Double
-	let time: Date
+	public let tradeID: Int
+	public let price: Double
+	public let size: Double
+	public let bid: Double
+	public let ask: Double
+	public let volume: Double
+	public let time: Date
 	
 	internal init(json: Any) throws {
 		var jsonData: Data?
