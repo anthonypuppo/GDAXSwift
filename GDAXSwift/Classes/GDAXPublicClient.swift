@@ -33,12 +33,6 @@ public class GDAXPublicClient {
 		var query = [URLQueryItem]()
 		
 		if let level = level {
-			guard 1...3 ~= level else {
-				completionHandler(nil, nil, GDAXError.invalidRequestValue("level", "Must be between 1 and 3 or omitted"))
-				
-				return
-			}
-			
 			query.append(URLQueryItem(name: "level", value: String(level)))
 		}
 		

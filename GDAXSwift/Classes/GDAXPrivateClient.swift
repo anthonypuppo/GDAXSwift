@@ -68,8 +68,8 @@ public class GDAXPrivateClient {
 		})
 	}
 	
-	public func placeOrder() {
-		// TODO
+	public func placeOrder<T: GDAXOrderRequestProtocol>(order: T, completionHandler: @escaping (GDAXOrder?, HTTPURLResponse?, Error?) -> Void) {
+		httpClient.requestJSON(urlString: GDAXPrivateClient.ordersRootURLString, method: .post, body: order.asJSON().jsonData, completionHandler: completionHandler)
 	}
 	
 	public func cancelOrder(orderID: String, completionHandler: @escaping (String?, HTTPURLResponse?, Error?) -> Void) {

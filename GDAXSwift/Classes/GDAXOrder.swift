@@ -15,7 +15,7 @@ public struct GDAXOrder: JSONInitializable {
 	public let side: GDAXSide
 	public let stp: GDAXSelfTradePrevention
 	public let type: GDAXOrderType
-	public let timeInForce: String
+	public let timeInForce: GDAXTimeInForce
 	public let postOnly: Bool
 	public let createdAt: Date
 	public let fillFees: Double
@@ -65,7 +65,7 @@ public struct GDAXOrder: JSONInitializable {
 			throw GDAXError.responseParsingFailure("type")
 		}
 		
-		guard let timeInForce = json["time_in_force"] as? String else {
+		guard let timeInForce = GDAXTimeInForce(rawValue: json["time_in_force"] as? String ?? "") else {
 			throw GDAXError.responseParsingFailure("time_in_force")
 		}
 		

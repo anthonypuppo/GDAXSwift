@@ -8,7 +8,6 @@
 
 public enum GDAXError: Error, LocalizedError {
 	
-	case invalidRequestValue(String, Any)
 	case invalidStatusCode(Int, String)
 	case authenticationBuilderError(String)
 	case invalidResponseData
@@ -16,8 +15,6 @@ public enum GDAXError: Error, LocalizedError {
 	
 	public var errorDescription: String? {
 		switch self {
-		case .invalidRequestValue(let fieldName, let value):
-			return NSLocalizedString("(\(fieldName)) \(value)", comment: "error")
 		case .invalidStatusCode(let statusCode, let message):
 			return NSLocalizedString("(\(statusCode) - \(message))", comment: "error")
 		case .authenticationBuilderError(let message):
