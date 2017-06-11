@@ -17,7 +17,7 @@ While this library does the majority of the heavy lifting for you it is still re
 
 ## Requirements
 
-* iOS 8.0+ / macOS 10.10+
+* iOS 8.0+ / macOS 10.10+ / tvOS 9.0+ / watchOS 2.0+
 * Xcode 8.1+
 * Swift 3.0+
 
