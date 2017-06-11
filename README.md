@@ -61,6 +61,10 @@ gdaxClient.private.getAccounts({ (accounts, response, error) in
 * Support for the Websocket Feed
 * Documentation
 
+## Changelog
+
+See the [CHANGELOG](./CHANGELOG) file.
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
@@ -71,4 +75,4 @@ Anthony Puppo, anthonypuppo123@gmail.com
 
 ## License
 
-GDAXSwift is available under the MIT license. See the LICENSE file for more info.
+GDAXSwift is available under the MIT license. See the [LICENSE](./LICENSE) file for more info.
