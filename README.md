@@ -76,3 +76,8 @@ Anthony Puppo, anthonypuppo123@gmail.com
 ## License
 
 GDAXSwift is available under the MIT license. See the [LICENSE](./LICENSE) file for more info.
+
+## Donations
+
+* Bitcoin: 1HTrooe1AsQUPkPrrCC39BZbX8K6qnUJFV
+* Ethereum: 0x7117A29cb2F425405D0DF1961fc4d7BF3e526b6b
