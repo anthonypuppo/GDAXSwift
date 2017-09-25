@@ -105,31 +105,31 @@ public class GDAXPublicClient {
 						return
 					}
 					
-					guard let low = rate[0] as? Double else {
+					guard let low = rate[1] as? Double else {
 						completionHandler(nil, nil, GDAXError.responseParsingFailure("low"))
 						
 						return
 					}
 					
-					guard let high = rate[0] as? Double else {
+					guard let high = rate[2] as? Double else {
 						completionHandler(nil, nil, GDAXError.responseParsingFailure("high"))
 						
 						return
 					}
 					
-					guard let open = rate[0] as? Double else {
+					guard let open = rate[3] as? Double else {
 						completionHandler(nil, nil, GDAXError.responseParsingFailure("open"))
 						
 						return
 					}
 					
-					guard let close = rate[0] as? Double else {
+					guard let close = rate[4] as? Double else {
 						completionHandler(nil, nil, GDAXError.responseParsingFailure("close"))
 						
 						return
 					}
 					
-					guard let volume = rate[0] as? Double else {
+					guard let volume = rate[5] as? Double else {
 						completionHandler(nil, nil, GDAXError.responseParsingFailure("volume"))
 						
 						return

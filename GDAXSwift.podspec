@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'GDAXSwift'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'The unofficial Swift wrapper around the GDAX API'
   s.description      = 'The unofficial Swift wrapper around the GDAX API to allow easy programmatic trading and data querying'
   s.homepage         = 'https://github.com/anthonypuppo/GDAXSwift'
