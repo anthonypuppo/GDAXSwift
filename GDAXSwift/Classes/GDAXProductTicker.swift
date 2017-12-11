@@ -29,8 +29,6 @@ public struct GDAXProductTicker: JSONInitializable {
 			throw GDAXError.invalidResponseData
 		}
 		
-		print(json)
-		
 		guard let tradeID = json["trade_id"] as? Int else {
 			throw GDAXError.responseParsingFailure("trade_id")
 		}
