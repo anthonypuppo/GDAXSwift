@@ -27,6 +27,7 @@ public struct GDAXOrder: JSONInitializable {
 	public let status: GDAXOrderStatus
 	public let settled: Bool
 	public let doneReason: GDAXDoneReason?
+	public let rejectReason: String?
 	
 	internal init(json: Any) throws {
 		var jsonData: Data?
@@ -48,7 +49,7 @@ public struct GDAXOrder: JSONInitializable {
 		let price = Double(json["price"] as? String ?? "")
 		let size = Double(json["size"] as? String ?? "")
 		let funds = Double(json["funds"] as? String ?? "")
-		
+
 		guard let productID = json["product_id"] as? String else {
 			throw GDAXError.responseParsingFailure("product_id")
 		}
@@ -96,7 +97,9 @@ public struct GDAXOrder: JSONInitializable {
 		}
 
 		let doneReason = GDAXDoneReason(rawValue: json["done_reason"] as? String ?? "")
-		
+
+		let rejectReason = json["reject_reason"] as? String
+
 		self.id = id
 		self.price = price
 		self.size = size
@@ -114,6 +117,7 @@ public struct GDAXOrder: JSONInitializable {
 		self.status = status
 		self.settled = settled
 		self.doneReason = doneReason
+		self.rejectReason = rejectReason
 	}
 	
 }
