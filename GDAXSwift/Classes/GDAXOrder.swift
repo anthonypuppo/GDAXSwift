@@ -8,14 +8,17 @@
 
 public struct GDAXOrder: JSONInitializable {
 	
+	/* Some fields are optional. E.g. pending market orders might not 
+	   have price and size or funds. timeInForce is also not always set. */
 	public let id: String
-	public let price: Double
-	public let size: Double
+	public let price: Double?
+	public let size: Double?
+	public let funds: Double?
 	public let productID: String
 	public let side: GDAXSide
 	public let stp: GDAXSelfTradePrevention
 	public let type: GDAXOrderType
-	public let timeInForce: GDAXTimeInForce
+	public let timeInForce: GDAXTimeInForce?
 	public let postOnly: Bool
 	public let createdAt: Date
 	public let fillFees: Double
@@ -23,6 +26,8 @@ public struct GDAXOrder: JSONInitializable {
 	public let executedValue: Double
 	public let status: GDAXOrderStatus
 	public let settled: Bool
+	public let doneReason: GDAXDoneReason?
+	public let rejectReason: String?
 	
 	internal init(json: Any) throws {
 		var jsonData: Data?
@@ -41,14 +46,10 @@ public struct GDAXOrder: JSONInitializable {
 			throw GDAXError.responseParsingFailure("id")
 		}
 		
-		guard let price = Double(json["price"] as? String ?? "") else {
-			throw GDAXError.responseParsingFailure("price")
-		}
-		
-		guard let size = Double(json["size"] as? String ?? "") else {
-			throw GDAXError.responseParsingFailure("size")
-		}
-		
+		let price = Double(json["price"] as? String ?? "")
+		let size = Double(json["size"] as? String ?? "")
+		let funds = Double(json["funds"] as? String ?? "")
+
 		guard let productID = json["product_id"] as? String else {
 			throw GDAXError.responseParsingFailure("product_id")
 		}
@@ -65,9 +66,7 @@ public struct GDAXOrder: JSONInitializable {
 			throw GDAXError.responseParsingFailure("type")
 		}
 		
-		guard let timeInForce = GDAXTimeInForce(rawValue: json["time_in_force"] as? String ?? "") else {
-			throw GDAXError.responseParsingFailure("time_in_force")
-		}
+		let timeInForce = GDAXTimeInForce(rawValue: json["time_in_force"] as? String ?? "")
 		
 		guard let postOnly = json["post_only"] as? Bool else {
 			throw GDAXError.responseParsingFailure("post_only")
@@ -96,7 +95,11 @@ public struct GDAXOrder: JSONInitializable {
 		guard let settled = json["settled"] as? Bool else {
 			throw GDAXError.responseParsingFailure("settled")
 		}
-		
+
+		let doneReason = GDAXDoneReason(rawValue: json["done_reason"] as? String ?? "")
+
+		let rejectReason = json["reject_reason"] as? String
+
 		self.id = id
 		self.price = price
 		self.size = size
@@ -109,9 +112,12 @@ public struct GDAXOrder: JSONInitializable {
 		self.createdAt = createdAt
 		self.fillFees = fillFees
 		self.filledSize = filledSize
+		self.funds = funds
 		self.executedValue = executedValue
 		self.status = status
 		self.settled = settled
+		self.doneReason = doneReason
+		self.rejectReason = rejectReason
 	}
 	
 }

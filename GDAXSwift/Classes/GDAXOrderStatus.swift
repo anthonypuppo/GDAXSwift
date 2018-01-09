@@ -8,6 +8,6 @@
 
 public enum GDAXOrderStatus: String {
 	
-	case open, pending, active, done, all
+	case open, pending, active, done, all, rejected
 	
 }
