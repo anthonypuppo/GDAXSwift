@@ -8,7 +8,7 @@
 
 public struct GDAXAccountHistory: JSONInitializable {
 	
-	public let id: String
+	public let id: Int
 	public let createdAt: Date
 	public let amount: Double
 	public let balance: Double
@@ -28,7 +28,7 @@ public struct GDAXAccountHistory: JSONInitializable {
 			throw GDAXError.invalidResponseData
 		}
 		
-		guard let id = json["id"] as? String else {
+		guard let id = json["id"] as? Int else {
 			throw GDAXError.responseParsingFailure("id")
 		}
 		
