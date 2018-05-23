@@ -51,8 +51,10 @@ public class GDAXRequestAuthenticator {
 			
 			preHash += bodyString
 		}
+        
+        let _secret64 = secret64.padding(toLength: ((secret64.count+3)/4)*4, withPad: "=", startingAt: 0)
 		
-		guard let secret = Data(base64Encoded: secret64) else {
+		guard let secret = Data(base64Encoded: _secret64) else {
 			throw GDAXError.authenticationBuilderError("Failed to base64 decode secret")
 		}
 		
