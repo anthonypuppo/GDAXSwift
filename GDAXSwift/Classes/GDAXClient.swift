@@ -8,8 +8,8 @@
 
 public class GDAXClient {
 	
-	public static let baseAPIURLString = "https://api.gdax.com"
-	public static let baseSandboxAPIURLString = "https://api-public.sandbox.gdax.com"
+    public static let baseAPIURLString = "https://api.pro.coinbase.com"
+    public static let baseSandboxAPIURLString = "https://api-public.sandbox.pro.coinbase.com"
 	
 	public let apiKey: String?
 	public let secret64: String?
